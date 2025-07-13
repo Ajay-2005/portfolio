@@ -1,0 +1,267 @@
+/* Reset & Core */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #000;
+  color: white;
+  font-family: 'Courier New', monospace;
+}
+
+.grid-hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.website-grid-background,
+.website-grid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.website-grid-background {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
+  transform: perspective(600px) rotateX(55deg);
+  transform-origin: top;
+  opacity: 0.9;
+}
+
+.website-grid-overlay {
+  background: linear-gradient(to bottom, transparent 0%, rgba(13, 17, 23, 0.7) 40%, #0d1117 100%);
+}
+
+.custom-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.hero-section {
+  height: calc(100vh - 60px);
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.glow-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0, 255, 195, 0.4);
+  animation: fadeInGlow 0.5s ease-in forwards;
+  opacity: 0;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.9rem;
+  animation: bounce 1.5s infinite;
+  color: white;
+  z-index: 2;
+}
+
+.about-section {
+  background-color: #0d1117;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #e0e0e0;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.about-skills {
+  max-width: 750px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #00ffc3;
+}
+
+.projects-section {
+  background-color: #0d1117;
+  color: white;
+}
+
+.project-card {
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ccc;
+
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.project-card {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.thumb-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: filter 0.3s ease;
+}
+
+.project-card:hover .thumb-img {
+  filter: brightness(1.1);
+}
+
+.contact-section {
+  background-color: #0b0f14;
+  color: #e0e0e0;
+  padding: 80px 20px;
+}
+
+.contact-section input,
+.contact-section textarea {
+  background-color: #161b22;
+  border: 1px solid #00ffc3;
+  color: white;
+}
+
+.contact-section input::placeholder,
+.contact-section textarea::placeholder {
+  color: #aaa;
+}
+
+.footer-section {
+  background-color: #05080b;
+  color: #bbb;
+  margin-bottom: 0;
+}
+
+.footer-section a {
+  color: #00ffc3;
+}
+
+.footer-section a:hover {
+  color: #1effa3;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  40% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+@keyframes fadeInGlow {
+  from {
+    opacity: 0;
+    text-shadow: 0 0 2px rgba(0, 255, 195, 0.1);
+  }
+
+  to {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(0, 255, 195, 0.4);
+  }
+}
+
+.icon-cloud i {
+  animation: floatUp 2s ease-in-out infinite alternate;
+}
+
+.icon-cloud i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.icon-cloud i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes floatUp {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-8px);
+  }
+
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .glow-title {
+    font-size: 2.5rem;
+    padding-top: 120px;
+  }
+
+  .hero-section {
+    height: calc(100vh - 95px);
+  }
+}
