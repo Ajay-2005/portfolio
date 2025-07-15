@@ -269,10 +269,10 @@
     emailjs.init('VIL0S4IjogkUVzJEd')
   </script>
   <script>
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
+    document.getElementById("contact-form").addEventListener("submit",  (e)=> {
       e.preventDefault();
       emailjs.sendForm("service_eilmj2w", "template_5uu2yff", this)
-        .then(function () {
+        .then(()=> {
           alert("Message sent successfully!");
           document.getElementById("contact-form").reset();
 
